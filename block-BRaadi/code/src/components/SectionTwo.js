@@ -1,10 +1,21 @@
 import React from "react";
 
 class SectionTwo extends React.Component {
+  state = {
+    hasError: false
+  }
   handleClick = () => {
-    throw new Error("An error occured!");
+    try {
+      throw new Error("An error occured!");
+    } catch (error) {
+      this.setState({hasError: true});
+    }
   };
+
   render() {
+    if(this.state.hasError) {
+      return <h2>An error occured!</h2>
+    }
     return (
       <div className="box s1-c">
         <h2>Throw Error</h2>

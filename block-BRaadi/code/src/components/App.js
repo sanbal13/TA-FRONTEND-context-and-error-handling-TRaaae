@@ -3,7 +3,10 @@ import Header from "./Header";
 import Main from "./Main";
 
 class App extends React.Component {
-  render() {
+  state = {
+    isDarkMode: false
+  }
+  render() {    
     let { isDarkMode } = this.state;
     return (
       <>
